@@ -12,19 +12,21 @@ export function Sidebar() {
   ];
 
   return (
-    <aside className="flex flex-col gap-2 p-4 mt-4">
-      {navItems.map((item) => (
-        <Link
-          key={item.to}
-          to={item.to}
-          className={`flex text-gray-500 items-center gap-2 px-3 py-2 rounded hover:bg-gray-200 transition ${
-            pathname === item.to ? "bg-orange-100 font-semibold" : ""
-          }`}
-        >
-          {item.icon}
-          {item.label}
-        </Link>
-      ))}
+    <aside className="p-4 shadow-md">
+      <div className="flex flex-col gap-2 mt-5">
+        {navItems.map((item) => (
+          <Link
+            key={item.to}
+            to={item.to}
+            className={`flex text-gray-500 items-center gap-2 px-3 py-2 rounded hover:bg-gray-200 transition ${
+              pathname === item.to ? "bg-orange-100 font-semibold" : ""
+            }`}
+          >
+            {item.icon}
+            {item.label}
+          </Link>
+        ))}
+      </div>
     </aside>
   );
 }

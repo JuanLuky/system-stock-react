@@ -39,7 +39,7 @@ const columns: ColumnDef<Movimentacao>[] = [
 
 export function Movimentacoes() {
   return (
-    <div>
+    <div className="mt-1 p-4 shadow-md rounded-md">
       <h2 className="text-2xl text-yellow-950  font-bold mb-4">Movimentações</h2>
       <DataTable data={data} columns={columns} />
     </div>

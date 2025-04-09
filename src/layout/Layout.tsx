@@ -8,7 +8,7 @@ export default function Layout() {
         <Header />
         <div className="grid grid-cols-[220px_1fr] gap-4">
             <Sidebar />
-          <main className="bg-gray-50 p-6 overflow-y-auto">
+          <main className="bg-gray-100 p-6 overflow-y-auto">
             <Outlet />
           </main>
         </div>
