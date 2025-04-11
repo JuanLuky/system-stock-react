@@ -1,54 +1,75 @@
-# React + TypeScript + Vite
+# 📦 Sistema de Controle de Estoque
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sistema Web de Controle de Estoque com funcionalidades de listagem de produtos e movimentações (entradas/saídas), utilizando **ReactJS** no frontend e **Spring Boot** no backend.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tecnologias
 
-## Expanding the ESLint configuration
+### Frontend:
+- ⚛️ [React 18+](https://reactjs.org/)
+- 🧠 [React Router DOM](https://reactrouter.com/)
+- 🧩 [TanStack Table](https://tanstack.com/table/v8) – para tabelas reutilizáveis
+- 🎨 [TailwindCSS](https://tailwindcss.com/)
+- ⚡ [Axios](https://axios-http.com/)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Backend:
+- ☕ Spring Boot 3+
+- 🐘 Banco de Dados: MySQL ou PostgreSQL
+- 🛡️ Spring Security (se necessário)
+- 🔄 Spring Data JPA (Hibernate)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+---
+
+## 📂 Estrutura do Projeto (Frontend)
+
+```
+Estrutura do Projeto
+src/ 
+├── components/ # Componentes compartilhados (Header, Sidebar, Tabela) 
+├── pages/ # Páginas principais (Home, Produtos, Movimentações) 
+├── service/ # Configuração do Axios (API) 
+├── types/ # Tipagens/Interfaces 
+├── routes/ # Rotas da aplicação 
+├── layout/ # Layout base (com Sidebar/Header) 
+└── App.tsx # Componente principal
+├── README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ⚛️ Frontend (React)
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
 ```
+# Clone o repositório
+git clone https://github.com/JuanLuky/system-stock-react
+
+# Acesse a pasta do projeto
+cd system-stock-react
+
+# Instale as dependências
+npm install
+
+# Rode a aplicação
+npm run dev
+
+Acesse em: http://localhost:5173
+```
+
+
+# ✅ Funcionalidades
+ * Sidebar de navegação
+
+ * Tela inicial (Home)
+
+ * Listagem de Produtos com paginação
+
+ * Listagem de Movimentações com paginação
+
+ * Componente de tabela reutilizável
+
+ * CRUD completo (Em desenvolvimento)
+
+
+___
+# 👨‍💻 Autor
+Desenvolvido por Juan Santos 💻
