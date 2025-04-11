@@ -6,14 +6,15 @@ import {
   ColumnDef,
 } from "@tanstack/react-table";
 
-type DataTableProps<T> = {
+interface Props<T> {
   data: T[];
   columns: ColumnDef<T>[];
-};
+}
 
-export function DataTable<T>({ data, columns }: DataTableProps<T>) {
+export function DataTable<T>({ data, columns }: Props<T>) {
+
   const table = useReactTable({
-    data,
+    data: Array.isArray(data) ? data : [], // Protege contra erro
     columns,
     getCoreRowModel: getCoreRowModel(),
   });
@@ -21,6 +22,7 @@ export function DataTable<T>({ data, columns }: DataTableProps<T>) {
   return (
     <div className="overflow-x-auto border border-gray-300">
       <table className="min-w-full text-sm text-left bg-white">
+
         <thead className="bg-gray-100 text-gray-700 uppercase">
 
           {table.getHeaderGroups().map((headerGroup) => (
@@ -37,6 +39,7 @@ export function DataTable<T>({ data, columns }: DataTableProps<T>) {
           ))}
           
         </thead>
+
         <tbody className="text-gray-700">
 
           {table.getRowModel().rows.map((row) => (
